@@ -5,8 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout
+        uses: actions/checkout@v4
       - name: kernel details
-        run: uname & ls -l 
+        run: uname -a & ls -l 
       - name: number of files
         run: ls -l | wc -l
