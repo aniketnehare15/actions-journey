@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@actions-journey
+        uses: actions/checkout
       - name: kernel details
         run: uname & ls -l 
       - name: number of files
