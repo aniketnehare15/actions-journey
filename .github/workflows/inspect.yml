@@ -1,0 +1,12 @@
+name: inspect-runner
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@actions-journey
+      - name: kernel details
+        run: uname & ls -l 
+      - name: number of files
+        run: ls -l | wc -l
