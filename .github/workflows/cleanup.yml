@@ -8,7 +8,7 @@ jobs:
         run : echo "DB UP"
       - name: Flaky check
         run: exit 1
-      - name: Stop test databse
+      - name: Stop test database
         if: always()
         run: echo "DB Down"
         
