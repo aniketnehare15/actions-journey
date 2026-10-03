@@ -1,0 +1,17 @@
+name: Dependencies
+on: push
+jobs:
+  cache:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: checkout the repository
+        uses: actions/checkout@v4
+      - name: cachec the pip dependencies
+        uses: actions/cache@v4 
+        with:
+          path: ~/.cache/pip
+          key: pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            pip-
+      - name: install the package
+        run: pip install -f requirements.txt
