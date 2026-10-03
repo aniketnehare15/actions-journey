@@ -1,0 +1,11 @@
+name: clenup after database stop
+on: push
+jobs:
+  database:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Start test database
+        run : echo "DB UP"
+      - name: Flaky check
+      - name: Stop test databse
+        run: echo "DB Down"
