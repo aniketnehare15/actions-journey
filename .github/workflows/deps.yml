@@ -14,4 +14,4 @@ jobs:
           restore-keys: |
             pip-
       - name: install the package
-        run: pip install -f requirements.txt
+        run: pip install -r requirements.txt
