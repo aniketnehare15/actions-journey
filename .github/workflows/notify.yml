@@ -1,0 +1,15 @@
+name: workflow_call_secret
+on:
+  workflow_call:
+    inputs:
+      environment:
+        type: string
+        required: true
+jobs:
+  checksecret:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echos inpu
+        run: echo "$ {{NOTIFY_TOKEN}}"
+
+
