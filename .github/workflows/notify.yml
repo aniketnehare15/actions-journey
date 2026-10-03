@@ -5,11 +5,17 @@ on:
       environment:
         type: string
         required: true
+    secrets:
+      NOTIFY_TOKEN:
+        required: true
 jobs:
   checksecret:
     runs-on: ubuntu-latest
     steps:
-      - name: echos inpu
-        run: echo "$ {{NOTIFY_TOKEN}}"
-
-
+      - name: Announce the release 
+        run: echo "Notifying about release to $ {{ input.environment }}"
+      - name: Proven secret arrived
+        run: test -n "$TOKEN"
+        env:
+          TOKEN: ${{ secrets.NOTIFY_TOKEN }}
+  
