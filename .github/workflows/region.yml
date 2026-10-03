@@ -1,0 +1,8 @@
+name: regional workflow 
+on: push
+jobs:
+  regional-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: context with regional variable 
+        run : echo "Deploy in ${{ vars.DEPLOY_REGION }}"
