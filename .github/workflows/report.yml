@@ -6,7 +6,8 @@ jobs:
     steps:
       - name: write date in file
         run : date > report.txt
-      - uses: actions/upload-artifact@4
+      - name: upload artifact
+        uses: actions/upload-artifact@v4
         with:
           name: build-report
           path: report.txt
