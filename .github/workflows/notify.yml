@@ -1,0 +1,21 @@
+name: workflow_call_secret
+on:
+  workflow_call:
+    inputs:
+      environment:
+        type: string
+        required: true
+    secrets:
+      NOTIFY_TOKEN:
+        required: true
+jobs:
+  checksecret:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Announce the release 
+        run: echo "Notifying about release to $ {{ input.environment }}"
+      - name: Proven secret arrived
+        run: test -n "$TOKEN"
+        env:
+          TOKEN: ${{ secrets.NOTIFY_TOKEN }}
+  

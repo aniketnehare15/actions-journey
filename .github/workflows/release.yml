@@ -1,0 +1,9 @@
+name: workflow_call_secret_release
+on: push
+jobs:
+  notify:
+    uses: ./.github/workflows/notify.yml
+    with:
+      environment: staging
+    secrets:
+      NOTIFY_TOKEN: ${{ secrets.NOTIFY_TOKEN }}

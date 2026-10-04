@@ -1,0 +1,16 @@
+name: parallel steps for release pipeline
+on: push
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "linting the code"
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "running test cases"
+  package:
+    runs-on: ubuntu-latest
+    needs: [lint, unit-tests]
+    steps:
+      - run: echo "Packaging the code "
