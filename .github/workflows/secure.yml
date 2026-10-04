@@ -1,0 +1,9 @@
+name: secure
+on: push
+permissions: read-all
+jobs:
+  permission:
+    runs-on: ubuntu-latest
+    steps:
+        - name: checkout the repo
+          uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11  # using sha commit value instead of version for security
