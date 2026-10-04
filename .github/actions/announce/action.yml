@@ -1,0 +1,12 @@
+name: announce
+description: Declares required input from workflow
+inputs:
+  app-name:
+    required: true
+    description: Name of the app
+runs:
+  using: composite
+  steps:
+    - run: echo "Building ${{ input.app-name }}"
+      shell: bash
+  
