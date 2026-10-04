@@ -1,6 +1,7 @@
 name: secure
 on: push
-permissions: read-all
+permissions:
+  contents: read
 jobs:
   permission:
     runs-on: ubuntu-latest
