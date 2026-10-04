@@ -7,6 +7,6 @@ inputs:
 runs:
   using: composite
   steps:
-    - run: echo "Building ${{ input.app-name }}"
+    - run: echo "Building ${{ inputs.app-name }}"
       shell: bash
   
