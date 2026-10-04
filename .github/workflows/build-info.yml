@@ -1,0 +1,10 @@
+name: action-buil-info
+on: push
+jobs:
+  action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout the repo
+        uses: actions/checkout@v4
+      - name: using local action by folder path
+        uses: ./.github/actions/build-info
